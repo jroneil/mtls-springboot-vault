@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: secure-server
+
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:server-keystore.jks
+    key-store-password: changeit
+    key-alias: secure-server
+    trust-store: classpath:server-truststore.jks
+    trust-store-password: changeit
+    enabled: true
+    client-auth: need
