@@ -27,16 +27,19 @@
 	<modules>
 		<module>server</module>
 		<module>client</module>
+		<module>keystore</module>
 	</modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-vault-dependencies</artifactId>
+				<version>1.1.0.RELEASE</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 </project>

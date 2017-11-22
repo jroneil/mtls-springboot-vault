@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    vault:
+      generic:
+        application-name: mtls-client
+      host: localhost
+      port: 8200
+      scheme: http
+      authentication: TOKEN
+      token: 761b8203-f29c-da30-8863-0c4286076c51
