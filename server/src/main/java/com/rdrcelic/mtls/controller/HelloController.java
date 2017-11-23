@@ -11,7 +11,7 @@ import java.security.Principal;
 @RestController
 public class HelloController
 {
-    @PreAuthorize("hasAuthority('ROLE_USER')")
+    @PreAuthorize("hasAuthority('ROLE_TLS_CLIENT')")
     @GetMapping(value = "/user")
     public UserDetails userDetails(Principal principal) {
         return (UserDetails)((Authentication) principal).getPrincipal();

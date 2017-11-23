@@ -15,6 +15,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    /**
+     * Configure mTLS based on client certificate CN field value
+     *
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated()
@@ -24,6 +30,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .userDetailsService(userDetailsService());
     }
 
+    /**
+     * Authenticate user based on TLS client Common Name (CN) configured in its certificate
+     * and assign ROLE_TLS_CLIENT authority.
+     * @return
+     */
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsService() {
@@ -32,7 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 if (username.equals("myclient")) {
                     return new User(username, "",
                             AuthorityUtils
-                                    .commaSeparatedStringToAuthorityList("ROLE_USER"));
+                                    .commaSeparatedStringToAuthorityList("ROLE_TLS_CLIENT"));
                 }
                 return new User("", "", AuthorityUtils.NO_AUTHORITIES);
             }

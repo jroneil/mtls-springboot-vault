@@ -31,13 +31,6 @@
 			<artifactId>spring-cloud-starter-vault-config</artifactId>
 		</dependency>
 
-        <!-- vault util -->
-        <dependency>
-            <groupId>com.rdrcelic</groupId>
-            <artifactId>keystore</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

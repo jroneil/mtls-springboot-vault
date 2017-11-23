@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MtlsServerApplication {
 
+	// want to see SSL handshake logs
 	static {
 		System.setProperty("javax.net.debug", "ssl");
 	}

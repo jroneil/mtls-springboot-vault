@@ -12,6 +12,10 @@ public class ClientController {
     @Autowired
     UserService userService;
 
+    /**
+     * Get user info from server
+     * @return
+     */
     @GetMapping(value = "/user")
     public String getUser() {
         return userService.getUser();
