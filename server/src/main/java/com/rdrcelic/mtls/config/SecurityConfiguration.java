@@ -11,10 +11,17 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    // TODO: this list should be part of server configuration
+    private static List<String> adminClientIds = Arrays.asList("myclient");
+
     /**
      * Configure mTLS based on client certificate CN field value
      *
@@ -37,16 +44,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
      */
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserDetailsService() {
-            @Override
-            public UserDetails loadUserByUsername(String username) {
-                if (username.equals("myclient")) {
-                    return new User(username, "",
-                            AuthorityUtils
-                                    .commaSeparatedStringToAuthorityList("ROLE_TLS_CLIENT"));
-                }
-                return new User("", "", AuthorityUtils.NO_AUTHORITIES);
-            }
+        return username -> {
+            User.UserBuilder builder = User.withUsername(username).password("NOT-USED");
+            builder = this.adminClientIds.contains(username) ? builder.roles("TLS_CLIENT", "USER") : builder.roles("USER");
+            return builder.build();
         };
     }
 }
