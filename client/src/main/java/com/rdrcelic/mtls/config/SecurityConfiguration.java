@@ -40,6 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().anyRequest().anonymous();
     }
 
+    // TODO: take this out - create configurable RestTemplate/HttpClient.
     @PostConstruct
     public void initSsl(){
         System.setProperty("javax.net.ssl.keyStore", tmpKeystoreFileFromBase64("client-keystore", client_keystore));
