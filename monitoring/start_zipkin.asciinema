@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "width": 160,
+  "height": 25,
+  "duration": 68.888584,
+  "command": null,
+  "title": null,
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.097047,
+      "\u001b[?1034hbash-3.2$ "
+    ],
+    [
+      2.275793,
+      "d"
+    ],
+    [
+      0.089385,
+      "o"
+    ],
+    [
+      0.09936,
+      "c"
+    ],
+    [
+      0.118644,
+      "k"
+    ],
+    [
+      0.095402,
+      "e"
+    ],
+    [
+      0.112251,
+      "r"
+    ],
+    [
+      0.323893,
+      " "
+    ],
+    [
+      0.142578,
+      "p"
+    ],
+    [
+      0.198186,
+      "s"
+    ],
+    [
+      0.188216,
+      "\r\n"
+    ],
+    [
+      0.040619,
+      "CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                              NAMES\r\n98e5903554ee        openzipkin/zipkin   \"/bin/sh -c 'test ...\"   4 minutes ago       Up 4 minutes        9410/tcp, 0.0.0.0:9411->9411/tcp   vigilant_poincare\r\n"
+    ],
+    [
+      0.002134,
+      "bash-3.2$ "
+    ],
+    [
+      4.270418,
+      "d"
+    ],
+    [
+      0.126529,
+      "o"
+    ],
+    [
+      0.117031,
+      "c"
+    ],
+    [
+      0.118972,
+      "k"
+    ],
+    [
+      0.095439,
+      "e"
+    ],
+    [
+      0.107622,
+      "r"
+    ],
+    [
+      0.984454,
+      " "
+    ],
+    [
+      0.830024,
+      "s"
+    ],
+    [
+      0.128153,
+      "t"
+    ],
+    [
+      0.120347,
+      "o"
+    ],
+    [
+      0.095655,
+      "p"
+    ],
+    [
+      0.345016,
+      " "
+    ],
+    [
+      5.029269,
+      "98e590"
+    ],
+    [
+      0.000113,
+      "3554ee"
+    ],
+    [
+      1.486739,
+      "\r\n"
+    ],
+    [
+      10.671074,
+      "98e5903554ee\r\n"
+    ],
+    [
+      0.002071,
+      "bash-3.2$ "
+    ],
+    [
+      15.673242,
+      "docker run "
+    ],
+    [
+      2.9e-05,
+      "-d -p 9411:9"
+    ],
+    [
+      1.4e-05,
+      "411"
+    ],
+    [
+      1.2e-05,
+      " o"
+    ],
+    [
+      1.2e-05,
+      "p"
+    ],
+    [
+      1.2e-05,
+      "en"
+    ],
+    [
+      0.000109,
+      "zipkin/zi"
+    ],
+    [
+      5e-05,
+      "pkin"
+    ],
+    [
+      2.307348,
+      "\r\n"
+    ],
+    [
+      0.157436,
+      "c822ca75308ba743fecdb666c3d1193cccf92204b423f1e6fcac09ecfbc89c79\r\n"
+    ],
+    [
+      0.375501,
+      "bash-3.2$ "
+    ],
+    [
+      2.770655,
+      "d"
+    ],
+    [
+      0.060213,
+      "o"
+    ],
+    [
+      0.102881,
+      "c"
+    ],
+    [
+      0.124247,
+      "k"
+    ],
+    [
+      0.101609,
+      "e"
+    ],
+    [
+      0.084005,
+      "r"
+    ],
+    [
+      0.126031,
+      " "
+    ],
+    [
+      0.19246,
+      "p"
+    ],
+    [
+      0.13867,
+      "s"
+    ],
+    [
+      0.358258,
+      "\r\n"
+    ],
+    [
+      0.031583,
+      "CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                              NAMES\r\nc822ca75308b        openzipkin/zipkin   \"/bin/sh -c 'test ...\"   5 seconds ago       Up 4 seconds        9410/tcp, 0.0.0.0:9411->9411/tcp   romantic_johnson\r\n"
+    ],
+    [
+      0.002403,
+      "bash-3.2$ "
+    ],
+    [
+      16.506503,
+      "curl h"
+    ],
+    [
+      2.5e-05,
+      "ttp://loc"
+    ],
+    [
+      1.4e-05,
+      "alh"
+    ],
+    [
+      1.3e-05,
+      "os"
+    ],
+    [
+      8.5e-05,
+      "t:94"
+    ],
+    [
+      2.8e-05,
+      "11/z"
+    ],
+    [
+      3.1e-05,
+      "ipk"
+    ],
+    [
+      1.3e-05,
+      "in/"
+    ],
+    [
+      1.153719,
+      "\r\n"
+    ],
+    [
+      0.299358,
+      "<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <!--\r\n      add 'base' tag to work around the fact that 'html-webpack-plugin' does not work\r\n      with '__webpack_public_path__' being set as reported at https://github.com/jantimon/html-webpack-plugin/issues/119\r\n    -->\r\n    <base href=\"/zipkin/\">\r\n\r\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\r\n\r\n    <meta charset=\"UTF-8\">\r\n    <title>Webpack App</title>\r\n  <link href=\"app-37cb6759e585c3a07299.min.css\" rel=\"stylesheet\"></head>\r\n  <body>\r\n  <script type=\"text/javascript\" src=\"app-37cb6759e585c3a07299.min.js\"></script></body>\r\n</html>\r\n"
+    ],
+    [
+      0.000988,
+      "bash-3.2$ "
+    ]
+  ]
+}

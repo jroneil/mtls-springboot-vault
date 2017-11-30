@@ -2,4 +2,36 @@ server:
   port: 8080
 
 spring:
-  application: mtls-client
+  application:
+    name: mtls-client
+  # monitoring configuration
+  zipkin:
+    baseUrl: http://127.0.0.1:9411/
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss # to format timestamp in actuator endpoints
+
+endpoints:
+  actuator:
+    enabled: true
+  health:
+    sensitive: false
+  info:
+    sensitive: false
+  metrics:
+    sensitive: false
+  trace:
+    sensitive: false
+
+logging:
+  level:
+    com.rdrcelic: debug
+
+# actuator configuration
+#management:
+#  trace:
+#    include: parameters,errors
+

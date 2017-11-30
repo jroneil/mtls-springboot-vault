@@ -1,6 +1,12 @@
 spring:
   application:
     name: secure-server
+  # monitoring configuration
+  zipkin:
+    baseUrl: http://127.0.0.1:9411/
+  sleuth:
+    sampler:
+      percentage: 1.0
 
 server:
   port: 8443
@@ -12,3 +18,19 @@ server:
     trust-store-password: changeit
     enabled: true
     client-auth: need
+
+endpoints:
+  actuator:
+    enabled: true
+  health:
+    sensitive: false
+  info:
+    sensitive: false
+  metrics:
+    sensitive: false
+  trace:
+    sensitive: false
+
+logging:
+  level:
+    com.rdrcelic: debug
