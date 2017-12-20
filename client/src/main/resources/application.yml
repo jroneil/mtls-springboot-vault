@@ -30,6 +30,28 @@ logging:
   level:
     com.rdrcelic: debug
 
+hystrix:
+  command:
+    userServiceCommand:
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 100000
+          numBuckets: 2
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+      circuitBreaker:
+        requestVolumeThreshold: 2
+        errorThresholdPercentage: 50
+        #sleepWindowInMilliseconds: 5000
+  # calculate threadpool size after formula: (transactions_per_second * response_time) + buffer
+  threadpool:
+    UserService:
+      coreSize: 50
+      maxSize: 100
+
+
 # actuator configuration
 #management:
 #  trace:

@@ -6,6 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
@@ -26,5 +27,11 @@ public class HelloController
     public String sayHello(Principal principal) {
         String username = ((UserDetails)((Authentication) principal).getPrincipal()).getUsername();
         return "Hello " + (StringUtils.isEmpty(username) ? "World" : username);
+    }
+
+    @GetMapping(value = "/slowdata/{delay}")
+    public String slowData(@PathVariable int delay) throws InterruptedException {
+        Thread.sleep(delay);
+        return "This is slow data";
     }
 }
