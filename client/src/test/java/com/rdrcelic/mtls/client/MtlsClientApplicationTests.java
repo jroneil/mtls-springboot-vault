@@ -1,5 +1,6 @@
 package com.rdrcelic.mtls.client;
 
+import com.rdrcelic.mtls.domain.MtlsUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +30,12 @@ public class MtlsClientApplicationTests {
 		// given
 
 	    // when
-	    ResponseEntity<String> response = restTemplate.getForEntity("/user", String.class);
+	    ResponseEntity<MtlsUser> response = restTemplate.getForEntity("/user", MtlsUser.class);
 
 	    // then
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(response.getBody()).isNotBlank();
+        assertThat(response.getBody().getUsername()).isNotEmpty();
+        assertThat(response.getBody().getAuthorities()).isNotEmpty();
 	}
 
 }
