@@ -42,9 +42,10 @@ public class UserService {
 
     @HystrixCommand(fallbackMethod = "getDataSlowFallback", commandKey = "userServiceCommand")
     public String getDataSlow(int delay) {
+        log.debug("getting data, delay {}", delay);
         String url = UrlComposer.buildUri(slowBackend, Collections.singletonMap("delay", delay)).toUriString();
         ResponseEntity<String> rs = restTemplate.getForEntity(url, String.class);
-        log.debug("getting data from slow backend, delay {}", delay);
+        log.debug("got data from slow backend, delay {}", delay);
         return rs.toString();
     }
 

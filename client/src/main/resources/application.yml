@@ -35,17 +35,17 @@ hystrix:
     userServiceCommand:
       metrics:
         rollingStats:
-          timeInMilliseconds: 100000
-          numBuckets: 2
+          timeInMilliseconds: 10000
+          numBuckets: 10
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 3000
       circuitBreaker:
-        requestVolumeThreshold: 2
+        requestVolumeThreshold: 10
         errorThresholdPercentage: 50
-        #sleepWindowInMilliseconds: 5000
-  # calculate threadpool size after formula: (transactions_per_second * response_time) + buffer
+        sleepWindowInMilliseconds: 1000
+  # calculate threadpool size after formula: (transactions_per_second * target_response_time) + buffer
   threadpool:
     UserService:
       coreSize: 50
