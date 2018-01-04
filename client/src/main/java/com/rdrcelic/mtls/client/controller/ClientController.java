@@ -1,6 +1,6 @@
-package com.rdrcelic.mtls.controller;
+package com.rdrcelic.mtls.client.controller;
 
-import com.rdrcelic.mtls.service.UserService;
+import com.rdrcelic.mtls.client.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

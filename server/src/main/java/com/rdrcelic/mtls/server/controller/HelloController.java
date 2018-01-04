@@ -1,4 +1,4 @@
-package com.rdrcelic.mtls.controller;
+package com.rdrcelic.mtls.server.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,7 +18,7 @@ public class HelloController
     @PreAuthorize("hasAuthority('ROLE_TLS_CLIENT')")
     @GetMapping(value = "/user")
     public UserDetails userDetails(Principal principal) {
-        log.debug("returning client id,.,");
+        log.debug("returning client id {}", principal.getName());
         return (UserDetails)((Authentication) principal).getPrincipal();
     }
 

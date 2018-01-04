@@ -1,4 +1,4 @@
-package com.rdrcelic.mtls.util;
+package com.rdrcelic.mtls.client.util;
 
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;

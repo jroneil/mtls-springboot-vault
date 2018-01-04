@@ -1,13 +1,11 @@
-package com.rdrcelic.mtls.util;
+package com.rdrcelic.mtls.client.util;
 
 import org.junit.Test;
 import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
 
 public class UrlComposerTest {
     private final String urlTemplate = "https://localhost:8443/slowdata/{delay:[0-9]{1,6}}";

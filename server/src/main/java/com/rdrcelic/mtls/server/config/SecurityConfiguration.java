@@ -1,4 +1,4 @@
-package com.rdrcelic.mtls.config;
+package com.rdrcelic.mtls.server.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

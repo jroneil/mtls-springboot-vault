@@ -1,4 +1,4 @@
-package com.rdrcelic.mtls;
+package com.rdrcelic.mtls.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

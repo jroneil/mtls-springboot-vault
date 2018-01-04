@@ -1,14 +1,19 @@
-package com.rdrcelic.mtls.service;
+package com.rdrcelic.mtls.client.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.rdrcelic.mtls.util.UrlComposer;
+import com.rdrcelic.mtls.client.util.UrlComposer;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContextBuilder;
+import org.apache.http.ssl.SSLContexts;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.text.MessageFormat;
+import javax.net.ssl.SSLContext;
 import java.util.Collections;
 
 /**
@@ -25,9 +30,9 @@ public class UserService {
 
     RestTemplate restTemplate;
 
-    public UserService(RestTemplateBuilder templateBuilder) {
+    public UserService(RestTemplate restTemplate) {
 
-        this.restTemplate = templateBuilder.setConnectTimeout(10000).build();
+        this.restTemplate = restTemplate;
     }
 
     /**
