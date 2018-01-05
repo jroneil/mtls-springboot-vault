@@ -46,6 +46,17 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+				<groupId>io.vavr</groupId>
+				<artifactId>vavr</artifactId>
+				<version>0.9.1</version>
+			</dependency>
+			<!-- testing -->
+			<dependency>
+				<groupId>io.github.benas</groupId>
+				<artifactId>random-beans</artifactId>
+				<version>3.7.0</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
