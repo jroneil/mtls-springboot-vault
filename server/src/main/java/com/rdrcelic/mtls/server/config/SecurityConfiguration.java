@@ -20,7 +20,7 @@ import java.util.List;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     // TODO: this list should be part of server configuration
-    private static List<String> adminClientIds = Arrays.asList("myclient");
+    private static List<String> adminClientIds = Arrays.asList("myclient", "browserClient");
 
     /**
      * Configure mTLS based on client certificate CN field value
