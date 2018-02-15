@@ -18,10 +18,13 @@ import java.util.Collections;
 @Service
 public class UserService {
 
+    // TODO: make these comming from configuration/environment
     // path to user backend (server)
     private static String userBackend = "https://localhost:8443/user";
     // path to slow backend
     private static String slowBackend = "https://localhost:8443/slowdata/{delay:[0-9]{1,6}}";
+    // path to hello
+    private static String helloBackend = "http://localhost:8443/hello";
 
     RestTemplate restTemplate;
 
@@ -52,5 +55,11 @@ public class UserService {
     private String getDataSlowFallback(int delay) {
         log.debug("fallback, delay {}", delay);
         return "Some fallback data";
+    }
+
+    public String getHello() {
+        ResponseEntity<String> rs = restTemplate.getForEntity(helloBackend, String.class);
+        log.debug("got hello response {}", rs.getBody());
+        return rs.getBody();
     }
 }

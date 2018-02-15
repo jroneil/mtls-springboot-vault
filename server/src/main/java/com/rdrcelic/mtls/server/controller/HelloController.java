@@ -34,7 +34,9 @@ public class HelloController
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping(value = "/hello")
     public String sayHello(Principal principal) {
-        String username = ((UserDetails)((Authentication) principal).getPrincipal()).getUsername();
+        String username = principal != null ?
+                ((UserDetails)((Authentication) principal).getPrincipal()).getUsername() :
+                "ANONYMOUS";
         return "Hello " + (StringUtils.isEmpty(username) ? "World" : username);
     }
 

@@ -83,6 +83,13 @@
             <groupId>io.github.benas</groupId>
             <artifactId>random-beans</artifactId>
         </dependency>
+		<!-- CDC -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -91,6 +98,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                <version>2.0.0.M6</version>
+                <!-- Don't forget about this value !! -->
+                <extensions>true</extensions>
+                <configuration>
+                    <!-- Provide the base class for your auto-generated tests -->
+                    <baseClassForTests>com.rdrcelic.mtls.server.contract.verifier.HelloControllerTest</baseClassForTests>
+                    <!--<testMode>EXPLICIT</testMode>-->
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
